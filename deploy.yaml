@@ -35,9 +35,8 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      # storage: 2Gi
-      #	storage of 2Gi is invalid as it cannot be less than the current mongo-pvc capacity of 20Gi, which was created earlier. This is to prevent data loss.
-      storage: 20Gi
+      storage: 2Gi
+
 ---
 # How do we want it implemented
 apiVersion: v1
@@ -47,9 +46,7 @@ metadata:
 spec:
   storageClassName: mylocalstorage
   capacity:
-    #	storage of 2Gi is invalid as it cannot be less than the current mongo-pvc capacity of 20Gi, which was created earlier. This is to prevent data loss.
-    storage: 20Gi
-    # storage: 2Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -67,5 +64,6 @@ spec:
     - name: mongoport
       port: 27017
   type: ClusterIP
+
 
 
