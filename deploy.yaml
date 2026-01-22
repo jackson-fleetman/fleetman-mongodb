@@ -16,7 +16,7 @@ spec:
       - name: mongodb
         # image: mongo:3.6.5-jessie
         # mongo:3.6.5 is EOL as of late 2021. Update to mongo:8.2.3-noble which is the latest stable version as of 22 Jan 2026
-        image: mongo:8.2.3-noble 
+        image: mongo:8.2.3-noble
         volumeMounts:
           - name: mongo-persistent-storage
             mountPath: /data/db
@@ -66,6 +66,7 @@ spec:
     - name: mongoport
       port: 27017
   type: ClusterIP
+
 
 
 
